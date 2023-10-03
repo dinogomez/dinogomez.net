@@ -7,6 +7,7 @@ import Link from "next/link";
 import {
   ClockIcon,
   CodeIcon,
+  CornerBottomLeftIcon,
   DesktopIcon,
   IdCardIcon,
   InfoCircledIcon,
@@ -38,32 +39,38 @@ export default function Home() {
 
   return (
     <GridLines
-      className="bg-slate-200"
-      lineColor="#dedcdc"
+      className="bg-slate-100"
+      lineColor="#fcfcfc"
       cellWidth={50}
       strokeWidth={2}
       cellWidth2={50}
     >
-      <main className="flex space-y-10 min-h-screen flex-col items-center lg:p-20 p-9 ">
+      <main className="flex space-y-10 min-h-screen flex-col items-center lg:p-20 lg:pt-10  p-9  ">
         <div className=" container font-mono text-sm text-gray-500">
-          <div className="flex md:hidden justify-start items-center space-x-2 hover-blue hover:text-blue-500 hover:underline">
-            <Link2Icon />
-            <span className="text-green-600">root@dinogomez</span>
-          </div>
+          <Link href="https://github.com/dinogomez/dinogomez.net">
+            <div className="flex md:hidden justify-start items-center space-x-2 hover-blue hover:text-blue-500 hover:underline">
+              <Link2Icon />
+              <span className="text-green-600">root@dinogomez</span>
+            </div>
+          </Link>
+
           <div className="md:mr-5 flex justify-between items-center flex-col lg:flex-row  ">
-            <span className="hidden md:flex  md:flex-row hover-blue hover:text-blue-500 hover:underline">
-              <div className="flex justify-start items-center space-x-2">
-                <Link2Icon />
-                <span className="text-green-600">root@dinogomez</span>
-              </div>
-              <div className="ml-2 space-x-2">
-                <span className="text-fuchsia-600">MINGW64</span>
-                <span className="text-yellow-500">
-                  ~github.com/dinogomez/dinogomez.net
-                </span>
-                <span className="text-sky-600">(main)</span>
-              </div>
-            </span>
+            <Link href="https://github.com/dinogomez/dinogomez.net">
+              <span className="hidden md:flex  md:flex-row hover-blue hover:text-blue-500 hover:underline">
+                <div className="flex justify-start items-center space-x-2">
+                  <Link2Icon />
+                  <span className="text-green-600">root@dinogomez</span>
+                </div>
+                <div className="ml-2 space-x-2">
+                  <span className="text-fuchsia-600">MINGW64</span>
+                  <span className="text-amber-500">
+                    ~github.com/dinogomez/dinogomez.net
+                  </span>
+                  <span className="text-sky-600">(main)</span>
+                </div>
+              </span>
+            </Link>
+
             <Draggable bounds="body">
               <div className="animate-pulse flex items-center whitespace-nowrap	p-1 md:p-2 border border-dashed border-pink-600 text-pink-700 space-x-2">
                 <InfoCircledIcon />
@@ -104,10 +111,19 @@ export default function Home() {
                 {currentTime} (GMT+8)
               </span>{" "}
             </div>
+            <div className="mt-2 flex items-center text-gray-500 space-x-2 ">
+              <CornerBottomLeftIcon className="" />
+              <span
+                className="flex items-center space-x-2 px-2 py-1 bg-gray-400 xl:border-2 xl:bg-gray-100 xl:text-gray-500 xl:border-gray-500 text-gray-100  lg:border-dashed hover:bg-gray-400 hover:text-white hover:border-transparent active:bg-gray-500"
+                suppressHydrationWarning
+              >
+                <CodeIcon className="" /> <span>Toggle Code Mode</span>
+              </span>{" "}
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row space-x-4 ">
+        <div className="flex flex-col xl:flex-row space-x-4 ">
           <div className="flex flex-col space-y-4">
             <Name />
             <Projects />
