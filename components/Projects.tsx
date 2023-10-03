@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
 
   return (
     <Draggable onDrag={handleDrag} bounds="body">
-      <div className="group text-md select-none" onClick={handleDivClick}>
+      <div className="group text-md " onClick={handleDivClick}>
         <div
           className="flex justify-between items-center font-mono cursor-pointer"
           // Call the function on click
@@ -35,15 +35,36 @@ const Projects: React.FC = () => {
         </div>
         <div className="flex flex-col space-y-3">
           <div className="hover:z-100 flex items-center justify-between py-4 border-2 border-dashed border-gray-300 hover:border-2 bg-white hover:border-green-600 shadow-lg hover:cursor-move ">
-            <div className="flex flex-col space-y-1  leading-none p-4">
+            <div className="flex flex-col space-y-1  leading-none p-4 ">
               <span className=" font-bold font-mono">
-                <span className="text-purple-600">Projects</span>{" "}
-                <span className="text-yellow-600">name</span> : string ={" "}
-                <span className="text-green-600">"dinogomez"</span>;
+                <span className="text-purple-600">var</span>{" "}
+                <span className="text-yellow-600">portfolio</span> : Project ={" "}
+                {"{"}
               </span>
-              <span className="text-gray-500">
-                // software engineer & automation engineer
-              </span>
+              <div className="py-2 flex flex-col space-y-2">
+                <span className="ml-4 font-mono text-gray-500">
+                  <span className="text-sky-700">name</span> :{" "}
+                  <span className="text-lime-700"> "dinogomez.net"</span>,
+                </span>
+                <span className="ml-4 font-mono text-gray-500">
+                  <span className="text-sky-700">tech</span> :
+                  <span className="text-lime-700">
+                    {" "}
+                    <span className="text-gray-500">[</span>"NextJs"
+                  </span>
+                  ,<span className="text-lime-700"> "shadcn/ui"</span>,{" "}
+                  <span className="text-lime-700"> "tailwind"</span>],
+                </span>
+                <span className="ml-4 font-mono text-gray-500">
+                  <span className="text-sky-700">desc</span> :
+                  <span className="text-lime-700">
+                    {" "}
+                    "My personal website built with NextJS"
+                  </span>
+                  ,
+                </span>
+              </div>
+              <span className="font-bold font-mono">{"}"}</span>
             </div>
           </div>
           <div className="hover:z-100 flex items-center justify-between py-4 border-2 border-dashed border-gray-300 hover:border-2 bg-white hover:border-green-600 shadow-lg hover:cursor-move ">

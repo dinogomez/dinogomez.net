@@ -10,10 +10,12 @@ import {
   DesktopIcon,
   IdCardIcon,
   InfoCircledIcon,
+  Link2Icon,
   PersonIcon,
 } from "@radix-ui/react-icons";
 import Projects from "../components/Projects";
 import GridLines from "react-gridlines";
+import Draggable from "react-draggable";
 
 export default function Home() {
   const [currentTime, setCurrentTime] = useState(
@@ -37,30 +39,37 @@ export default function Home() {
   return (
     <GridLines
       className="bg-slate-200"
-      lineColor="#dedede"
+      lineColor="#dedcdc"
       cellWidth={50}
       strokeWidth={2}
       cellWidth2={50}
     >
       <main className="flex space-y-10 min-h-screen flex-col items-center lg:p-20 p-9 ">
-        <div className=" container font-mono text-sm">
-          <div className="flex justify-between items-center flex-col text-gray-500 space-x-2">
-            <div className="flex items-center space-x-2">
-              <CodeIcon />
-              <span className="hover-blue hover:text-blue-500 hover:underline">
-                <span className="text-green-600"> root@dinogomez</span>{" "}
-                <span className="text-fuchsia-600">MINGW64</span>{" "}
+        <div className=" container font-mono text-sm text-gray-500">
+          <div className="flex md:hidden justify-start items-center space-x-2 hover-blue hover:text-blue-500 hover:underline">
+            <Link2Icon />
+            <span className="text-green-600">root@dinogomez</span>
+          </div>
+          <div className="md:mr-5 flex justify-between items-center flex-col lg:flex-row  ">
+            <span className="hidden md:flex  md:flex-row hover-blue hover:text-blue-500 hover:underline">
+              <div className="flex justify-start items-center space-x-2">
+                <Link2Icon />
+                <span className="text-green-600">root@dinogomez</span>
+              </div>
+              <div className="ml-2 space-x-2">
+                <span className="text-fuchsia-600">MINGW64</span>
                 <span className="text-yellow-500">
                   ~github.com/dinogomez/dinogomez.net
-                </span>{" "}
+                </span>
                 <span className="text-sky-600">(main)</span>
-              </span>
-            </div>
-
-            <div className="animate-pulse flex items-center text-yellow-600 space-x-2">
-              <InfoCircledIcon />
-              <span className="">try dragging the containers.</span>
-            </div>
+              </div>
+            </span>
+            <Draggable bounds="body">
+              <div className="animate-pulse flex items-center whitespace-nowrap	p-1 md:p-2 border border-dashed border-pink-600 text-pink-700 space-x-2">
+                <InfoCircledIcon />
+                <span className="">try dragging the containers.</span>
+              </div>
+            </Draggable>
           </div>
 
           <div className="flex justify-between flex-col sm:flex-row">
