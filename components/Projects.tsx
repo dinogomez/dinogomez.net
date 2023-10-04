@@ -117,7 +117,28 @@ const Projects: React.FC = () => {
                 </SyntaxHighlighter>
               </div>
             </div>
-            <div className="absolute flex font-mono text-gray-500 items-center text-sm italic top-0 right-0 mt-2 mr-4">
+            <div className="flex md:hidden absolute  font-mono text-gray-500 items-center text-sm italic top-0 right-0 mt-2 mr-4">
+              <span>["</span>
+              <a
+                href="https://github.com/dinogomez/cdata-js-highlighting"
+                target="_blank"
+              >
+                <div className="underline text-gray-500 group-hover/dino:bg-green-200  group-hover/dino:text-green-700 group-hover/dino:font-bold">
+                  <span>GitHub</span>
+                </div>
+              </a>
+              <span>","</span>
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=PaulGomez.cdata-js-highlighter"
+                target="_blank"
+              >
+                <div className="underline text-gray-500 group-hover/dino:bg-blue-200  group-hover/dino:text-blue-700 group-hover/dino:font-bold">
+                  <span>Visual Studio</span>
+                </div>
+              </a>
+              <span>"]</span>
+            </div>
+            <div className="hidden md:flex absolute font-mono text-gray-500 items-center text-sm italic top-0 right-0 mt-2 mr-4">
               <span>
                 <span className="group-hover/dino:hidden ">//</span>{" "}
                 <span className="group-hover/dino:text-sky-500">const</span>{" "}
@@ -125,18 +146,72 @@ const Projects: React.FC = () => {
                 <span className="group-hover/dino:text-orange-600">Links</span>{" "}
                 = ["
               </span>
+              <a
+                href="https://github.com/dinogomez/cdata-js-highlighting"
+                target="_blank"
+              >
+                <div className="underline text-gray-500 group-hover/dino:bg-green-200  group-hover/dino:text-green-700 group-hover/dino:font-bold">
+                  <span>GitHub</span>
+                </div>
+              </a>
+              <span>","</span>
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=PaulGomez.cdata-js-highlighter"
+                target="_blank"
+              >
+                <div className="underline text-gray-500 group-hover/dino:bg-blue-200  group-hover/dino:text-blue-700 group-hover/dino:font-bold">
+                  <span>Visual Studio</span>
+                </div>
+              </a>
+              "<span>]</span>
+            </div>
+          </div>
+
+          <div className="group/dino relative">
+            <div className=" hover:z-100 flex items-center justify-between py-4 border-2 border-dashed border-gray-300 hover:border-2 bg-white hover:border-blue-600 shadow-lg hover:cursor-default ">
+              <div className="group flex flex-col space-y-4 w-full  leading-none p-4 pt-6 pb-1 ">
+                <span className=" font-bold font-mono">
+                  <span className="text-purple-600">const</span>
+                  {" { "}
+                  <span className="text-yellow-600">portfolio</span> {"}"} :
+                  Website = {""}
+                  <span className="text-purple-600">await </span> {""}
+                  <span className="text-indigo-500">getProjects</span>
+                  {"();"}
+                </span>
+                <SyntaxHighlighter
+                  language="json"
+                  style={stackoverflowLight}
+                  wrapLongLines
+                  className=" overflow-auto w-full max-h-48 md:max-h-72 lg:max-h-max border border-gray-200 rounded-md bg-slate-100"
+                >
+                  {dinogomeznet}
+                </SyntaxHighlighter>
+              </div>
+            </div>
+            <div className="flex md:hidden absolute  font-mono text-gray-500 items-center text-sm italic top-0 right-0 mt-2 mr-4">
+              <span>["</span>
               <Link href="https://github.com/dinogomez/dinogomez.net">
                 <div className="underline text-gray-500 group-hover/dino:bg-green-200  group-hover/dino:text-green-700 group-hover/dino:font-bold">
                   <span>GitHub</span>
                 </div>
               </Link>
-              <span>","</span>
-              <Link href="https://github.com/dinogomez/dinogomez.net">
-                <div className="underline text-gray-500 group-hover/dino:bg-blue-200  group-hover/dino:text-blue-700 group-hover/dino:font-bold">
-                  <span>Visual Studio</span>
+              <span>"]</span>
+            </div>
+            <div className="hidden md:flex absolute  font-mono text-gray-500 items-center text-sm italic top-0 right-0 mt-2 mr-4">
+              <span>
+                <span className="group-hover/dino:hidden ">//</span>{" "}
+                <span className="group-hover/dino:text-sky-500">const</span>{" "}
+                links:{" "}
+                <span className="group-hover/dino:text-orange-600">Links</span>{" "}
+                = ["
+              </span>
+              <a href="https://github.com/dinogomez/dinogomez.net">
+                <div className="underline text-gray-500 group-hover/dino:bg-green-200  group-hover/dino:text-green-700 group-hover/dino:font-bold">
+                  <span>GitHub</span>
                 </div>
-              </Link>
-              "<span>]</span>
+              </a>
+              <span>"]</span>
             </div>
           </div>
         </div>

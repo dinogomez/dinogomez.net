@@ -5,7 +5,11 @@ import Draggable from "react-draggable"; // Import the draggable component
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { stackoverflowLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { EyeOpenIcon, EyeClosedIcon } from "@radix-ui/react-icons";
+import {
+  EyeOpenIcon,
+  EyeClosedIcon,
+  DragHandleDots2Icon,
+} from "@radix-ui/react-icons";
 
 const Experience: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -51,7 +55,10 @@ const Experience: React.FC = () => {
             className="group-hover:font-bold flex items-center space-x-2"
             onClick={toggleHide}
           >
-            {hide ? <EyeClosedIcon className="" /> : <EyeOpenIcon />}
+            <span>
+              <DragHandleDots2Icon />
+            </span>
+            <span> {hide ? <EyeClosedIcon /> : <EyeOpenIcon />}</span>{" "}
             <span className="flex">
               <span className=" text-rose-600">Experience</span>
             </span>
@@ -96,7 +103,7 @@ const Experience: React.FC = () => {
                   {"();"}
                 </span>
               </div>
-              <ScrollArea className="h-[275px] w-full border border-gray-200 rounded-md bg-slate-100 mt-3">
+              <ScrollArea className=" w-full border border-gray-200 rounded-md bg-slate-100 mt-3">
                 <div className="w-full font-medium">
                   <SyntaxHighlighter
                     language="json"
