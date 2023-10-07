@@ -10,6 +10,7 @@ import {
   CornerBottomLeftIcon,
   DesktopIcon,
   DragHandleDots2Icon,
+  EnvelopeClosedIcon,
   EyeOpenIcon,
   IdCardIcon,
   InfoCircledIcon,
@@ -55,25 +56,22 @@ export default function Home() {
               <span className="text-green-600">root@dinogomez</span>
             </div>
           </Link>
-
           <div className="md:mr-5 flex  justify-between items-center flex-col lg:flex-row  ">
             <div className="flex flex-col">
               <Link href="https://github.com/dinogomez/dinogomez.net">
-                <span className="hidden md:flex  md:flex-row hover-blue hover:text-blue-500 hover:underline">
-                  <div className="flex justify-start items-center space-x-2">
+                <span className="hidden md:flex md:space-x-1 md:flex-row hover-blue hover:text-blue-500 hover:underline">
+                  <span className="flex justify-start items-center space-x-2">
                     <Link2Icon />
                     <span className="text-green-600">root@dinogomez</span>
-                  </div>
-                  <div className="ml-2 space-x-2">
-                    <span className="text-fuchsia-600">MINGW64</span>
-                    <span className="text-amber-500">
-                      ~github.com/dinogomez/dinogomez.net
-                    </span>
-                    <span className="text-sky-600">(main)</span>
-                  </div>
+                  </span>
+                  <span className="text-fuchsia-600">MINGW64</span>
+                  <span className="text-amber-500">
+                    ~github.com/dinogomez/dinogomez.net
+                  </span>
+                  <span className="text-sky-600">(main)</span>
                 </span>
               </Link>
-              <div className="flex flex-col">
+              <div className="flex flex-col space-y-1">
                 <div className="flex justify-between flex-col sm:flex-row">
                   <div className="flex items-center text-gray-500 space-x-2">
                     <PersonIcon />
@@ -93,9 +91,15 @@ export default function Home() {
               </Link>
             </span> */}
                 <div className="flex items-center text-gray-500 space-x-2">
-                  <IdCardIcon />
+                  <DesktopIcon />
                   <span className="text-gray-500" suppressHydrationWarning>
                     Software Engineer at Infor
+                  </span>
+                </div>
+                <div className="flex items-center text-gray-500 space-x-2">
+                  <EnvelopeClosedIcon />
+                  <span className="text-gray-500" suppressHydrationWarning>
+                    dinogomez.dev@gmail.com
                   </span>
                 </div>
                 <div className="flex items-center text-gray-500 space-x-2">
@@ -107,7 +111,7 @@ export default function Home() {
                 <div className="mt-2 flex items-center text-gray-500 space-x-2 ">
                   <CornerBottomLeftIcon className="" />
                   <span
-                    className="flex items-center space-x-2 px-2 py-1 bg-gray-400 xl:border-2 xl:bg-gray-100 xl:text-gray-500 xl:border-gray-500 text-gray-100  lg:border-dashed hover:bg-gray-400 hover:text-white hover:border-transparent active:bg-gray-500"
+                    className="flex items-center space-x-2 px-2 py-1 bg-gray-400 xl:border xl:bg-gray-100 xl:text-gray-500 xl:border-gray-500 text-gray-100  lg:border-dashed hover:bg-gray-400 hover:text-white hover:border-transparent active:bg-gray-500"
                     suppressHydrationWarning
                   >
                     <CodeIcon className="" /> <span>Toggle Code Mode</span>
@@ -134,7 +138,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col xl:flex-row space-x-4 ">
-          <div className="flex flex-col space-y-4">
+          <div className="w-full flex flex-col space-y-4">
             <Name />
             <Projects />
           </div>

@@ -11,14 +11,14 @@ const Name: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [count, setCount] = useState(0); // Initialize count state
   const [hide, setHide] = useState(false); // Initialize count state
-  const birthdate = new Date("2000-03-17"); // Replace with your actual birthdate
+  const birthdate: any = new Date("2000-03-17"); // Replace with your actual birthdate
 
   const [ageInMilliseconds, setAgeInMilliseconds] = useState(
     calculateAgeInMilliseconds()
   );
 
   function calculateAgeInMilliseconds() {
-    const currentDate = new Date();
+    const currentDate: any = new Date();
     return ((currentDate - birthdate) / (1000 * 60 * 60 * 24 * 365.25)).toFixed(
       9
     );
@@ -80,7 +80,7 @@ const Name: React.FC = () => {
             </div>
           )}
         </div>
-        <div className="hover:z-100 flex items-center justify-between py-4 border-2 border-dashed border-gray-300 hover:border-2 bg-white hover:border-blue-600 shadow-lg hover:cursor-move ">
+        <div className="md:w-[38em] hover:z-100 flex items-center justify-between py-4 border-2 border-dashed border-gray-300 hover:border-2 bg-white hover:border-blue-600 shadow-lg hover:cursor-move ">
           <div
             className={` ${
               hide ? "hidden" : ""
@@ -114,8 +114,11 @@ const Name: React.FC = () => {
               className="text-gray-500 font-normal font-italic"
               suppressHydrationWarning
             >
-              // I am currently{" "}
-              <span className="min-w-[7rem] inline-block">
+              // currently{" "}
+              <span
+                className="min-w-[7rem] inline-block"
+                suppressHydrationWarning
+              >
                 {ageInMilliseconds}
               </span>
               <span className="ml-1">years-old.</span>
