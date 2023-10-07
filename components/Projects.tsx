@@ -1,10 +1,18 @@
 "use client";
 import {
+  ChevronRightIcon,
   DragHandleDots2Icon,
+  EnterFullScreenIcon,
+  ExitFullScreenIcon,
   EyeClosedIcon,
   EyeOpenIcon,
   GitHubLogoIcon,
   Link2Icon,
+  LinkNone2Icon,
+  MinusCircledIcon,
+  MinusIcon,
+  PlusCircledIcon,
+  PlusIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -17,13 +25,13 @@ import { stackoverflowLight } from "react-syntax-highlighter/dist/esm/styles/hlj
 const Projects: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [count, setCount] = useState(0); // Initialize count state
-  const [hideAll, setHideAll] = useState(false); // State to toggle hide on all projects
+  const [hideAll, setHideAll] = useState(true); // State to toggle hide on all projects
   const [hideStates, setHideStates] = useState({
-    A: false,
-    B: false,
-    C: false,
-    D: false,
-    F: false,
+    A: true,
+    B: true,
+    C: true,
+    D: true,
+    F: true,
   });
 
   const handleDrag = (e: any, ui: any) => {
@@ -139,6 +147,14 @@ const Projects: React.FC = () => {
                 </SyntaxHighlighter>
               </div>
             </div>
+            <div className="flex md:hidden absolute  font-mono text-gray-500 items-center text-sm space-x-1 top-0 ml-4  mt-2">
+              {hideStates["A"] ? (
+                <EnterFullScreenIcon />
+              ) : (
+                <ExitFullScreenIcon />
+              )}
+              <span className="invisible">.</span>
+            </div>
             <div className="flex md:hidden absolute  font-mono text-gray-500 items-center text-sm italic top-0 right-0 mt-2 mr-4">
               <span>["</span>
               <Link href="https://github.com/dinogomez/dinogomez.net">
@@ -148,8 +164,13 @@ const Projects: React.FC = () => {
               </Link>
               <span>"]</span>
             </div>
-            <div className="hidden md:flex absolute  font-mono text-gray-500 items-center text-sm italic top-0  ml-4  mt-[0.20em]">
-              <EyeOpenIcon />
+            <div className="hidden md:flex absolute  font-mono text-gray-500 items-center text-sm space-x-1 top-0  ml-4  mt-2">
+              {hideStates["A"] ? (
+                <EnterFullScreenIcon />
+              ) : (
+                <ExitFullScreenIcon />
+              )}
+              <span className="invisible">.</span>
             </div>
             <div className="hidden md:flex absolute  font-mono text-gray-500 items-center text-sm italic top-0 right-0 mr-4  mt-2">
               <span>
