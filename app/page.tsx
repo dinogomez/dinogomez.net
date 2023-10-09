@@ -5,17 +5,22 @@ import Name from "../components/Name";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
+  BorderDottedIcon,
   ClockIcon,
   CodeIcon,
   CornerBottomLeftIcon,
   DesktopIcon,
   DragHandleDots2Icon,
+  EnterFullScreenIcon,
   EnvelopeClosedIcon,
+  ExitFullScreenIcon,
+  EyeClosedIcon,
   EyeOpenIcon,
   IdCardIcon,
   InfoCircledIcon,
   Link2Icon,
   PersonIcon,
+  TextIcon,
 } from "@radix-ui/react-icons";
 import Projects from "../components/Projects";
 import GridLines from "react-gridlines";
@@ -26,12 +31,34 @@ export default function Home() {
     new Date().toLocaleTimeString("en-US", { timeZone: "Asia/Manila" })
   );
 
+  const [dragClick, setDragClick] = useState(false);
+  const [toggleClick, setToggleClick] = useState(false);
+  const [showClick, setShowClick] = useState(false);
+  const [textMode, setTextMode] = useState(false);
+
   // Function to update the current time
   const updateCurrentTime = () => {
     const philippinesTime = new Date().toLocaleTimeString("en-US", {
       timeZone: "Asia/Manila",
     });
     setCurrentTime(philippinesTime);
+  };
+  const handleTextMode = () => {
+    setTextMode(!textMode);
+  };
+  const handleToggle = () => {
+    setToggleClick(!toggleClick);
+  };
+
+  const handleShow = () => {
+    setShowClick(!showClick);
+  };
+  const handleDrag = () => {
+    setDragClick(true);
+  };
+
+  const handleDragStop = () => {
+    setDragClick(false);
   };
 
   useEffect(() => {
@@ -108,29 +135,73 @@ export default function Home() {
                     {currentTime} (GMT+8)
                   </span>{" "}
                 </div>
-                <div className="mt-2 flex items-center text-gray-500 space-x-2 ">
-                  <CornerBottomLeftIcon className="" />
-                  <span
-                    className="flex items-center space-x-2 px-2 py-1 bg-gray-400 xl:border xl:bg-gray-100 xl:text-gray-500 xl:border-gray-500 text-gray-100  lg:border-dashed hover:bg-gray-400 hover:text-white hover:border-transparent active:bg-gray-500"
-                    suppressHydrationWarning
-                  >
-                    <CodeIcon className="" /> <span>Toggle Code Mode</span>
-                  </span>{" "}
+                <div className="mt-2 flex md:items-center  flex-col md:flex-row text-gray-500 space-x-2 ">
+                  <div className="flex">
+                    <CornerBottomLeftIcon className="" />
+                    <button
+                      className={`${
+                        textMode
+                          ? "bg-blue-600 xl:border   xl:border-blue-400 hover:bg-blue-700 active:bg-blue-800"
+                          : "bg-red-600 xl:border   xl:border-red-400 hover:bg-red-700 active:bg-red-800"
+                      } flex items-center shadow-lg space-x-2 px-2 py-1  text-gray-100  lg:border-dashed   hover:border-transparent 0 select-none`}
+                      suppressHydrationWarning
+                      onClick={handleTextMode}
+                    >
+                      {textMode ? (
+                        <div className="flex space-x-1 items-center">
+                          <TextIcon className="" /> <span>Text Mode</span>
+                        </div>
+                      ) : (
+                        <div className="flex space-x-1 items-center">
+                          <CodeIcon className="" /> <span>Code Mode</span>
+                        </div>
+                      )}
+                    </button>{" "}
+                  </div>
+
+                  <span className="font-mono text-gray-400 text-sm">
+                    // 👷 work in progress
+                  </span>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col space-y-2">
-              <Draggable bounds="body">
-                <div className="animate-pulse flex items-center whitespace-nowrap	p-1 md:p-2 border border-dashed border-pink-600 text-pink-700 space-x-2">
-                  <DragHandleDots2Icon />
-                  <span className="">Containers are Draggable</span>
+            <div className="mt-3 md:mt-0 flex flex-col space-y-2 hover:cursor-pointer">
+              <Draggable
+                bounds="body"
+                onDrag={handleDrag}
+                onStop={handleDragStop}
+              >
+                <div className="relative">
+                  <div className="animate-pulse flex items-center whitespace-nowrap p-1 md:p-2 border border-dashed border-pink-600 text-pink-700 space-x-2">
+                    <DragHandleDots2Icon />
+                    <span className="">Draggable Containers</span>
+                  </div>
+                  <span className="absolute text-sm font-mono text-gray-500">
+                    {dragClick ? " // I'm being dragged" : ""}
+                  </span>
                 </div>
               </Draggable>
-              <Draggable bounds="body">
-                <div className="animate-pulse flex items-center whitespace-nowrap	p-1 md:p-2 border border-dashed border-pink-600 text-pink-700 space-x-2">
-                  <EyeOpenIcon />
-                  <span className="">Containers can be toggled</span>
+              <Draggable bounds="body" cancel=".btn">
+                <div
+                  onClick={handleToggle}
+                  className=" animate-pulse flex items-center whitespace-nowrap	p-1 md:p-2 border border-dashed border-pink-600 text-pink-700 space-x-2"
+                >
+                  <span className="btn">
+                    {toggleClick ? <EyeClosedIcon /> : <EyeOpenIcon />}
+                  </span>
+                  <span className="">Toggleable Containers</span>
+                </div>
+              </Draggable>
+              <Draggable bounds="body" cancel=".btn">
+                <div
+                  onClick={handleShow}
+                  className="animate-pulse flex items-center whitespace-nowrap	p-1 md:p-2 border border-dashed border-pink-600 text-pink-700 space-x-2"
+                >
+                  <span className="btn">
+                    {showClick ? <ExitFullScreenIcon /> : <BorderDottedIcon />}
+                  </span>
+                  <span className="">Hide/Show Containers</span>
                 </div>
               </Draggable>
             </div>
@@ -143,7 +214,7 @@ export default function Home() {
             <Projects />
           </div>
 
-          <div className="">
+          <div className="w-full">
             <Experience />
           </div>
         </div>

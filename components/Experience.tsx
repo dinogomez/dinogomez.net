@@ -31,7 +31,7 @@ const Experience: React.FC = () => {
   };
   const clog = "const str = JSON.stringify(Infor); \n\nconsole.log(obj);";
   const codeString =
-    '{\r\n  "Infor": {\r\n    "role": "Software Engineer",\r\n    "years": 1.6,\r\n    "startDate": "May 2022",\r\n    "endDate": "present",\r\n    "responsibilities": "System Maintainance, Feature Development, Task Automation",\r\n    "techs": [\r\n      "C#",\r\n      "Javascript",\r\n      "Python"\r\n    ],\r\n    "works": [\r\n      {\r\n        "name": "Scholar",\r\n        "tech": [\r\n          "python",\r\n          "algo"\r\n        ],\r\n        "desc": "Automation tool to identify untranslated resources in a codebase."\r\n      },\r\n      {\r\n        "name": "AutoSFA",\r\n        "tech": [\r\n          "python",\r\n          "playwright",\r\n          "smptylib"\r\n        ],\r\n        "desc": "Python and Playwright-based web automation tool for task monitoring."\r\n      }\r\n    ]\r\n  }\r\n}';
+    '{\r\n  "Infor": {\r\n    "role": "Software Engineer",\r\n    "years": 1.6,\r\n    "startDate": "May 2022",\r\n    "endDate": "present",\r\n    "responsibilities": "Feature Development, Maintainance and Automation",\r\n    "techs": [\r\n      "C#",\r\n      "Javascript",\r\n      "Python"\r\n    ],\r\n    "works": [\r\n      {\r\n        "name": "Scholar",\r\n        "tech": [\r\n          "python",\r\n          "numpy"\r\n        ],\r\n        "desc": "Automated Binary Searching for Translation References"\r\n      },\r\n      {\r\n        "name": "AutoSFA",\r\n        "tech": [\r\n          "python",\r\n          "playwright",\r\n          "smptylib"\r\n        ],\r\n        "desc": " Playwright Task Monitoring Web Automation"\r\n      }\r\n    ]\r\n  }\r\n}';
   const code = useTypingEffect(codeString, 50);
 
   const codeString2 =
@@ -45,14 +45,17 @@ const Experience: React.FC = () => {
   );
 
   return (
-    <Draggable onDrag={handleDrag} bounds="body">
-      <div className="group text-md  w-f  select-none" onClick={handleDivClick}>
+    <Draggable onDrag={handleDrag} bounds="body" cancel=".btn">
+      <div
+        className="group text-md  w-full  select-none"
+        onClick={handleDivClick}
+      >
         <div
           className="flex flex-col md:flex-row justify-between items-start md:items-center font-mono cursor-pointer"
           // Call the function on click
         >
           <div
-            className="group-hover:font-bold flex items-center space-x-2"
+            className="group-hover:font-bold flex items-center space-x-2 btn"
             onClick={toggleHide}
           >
             <span>
@@ -68,13 +71,13 @@ const Experience: React.FC = () => {
               {" "}
               <span>
                 {" "}
-                x:[{position.x.toFixed(2)}], y:[{position.y.toFixed(2)}]
+                x:[{position.x.toFixed(2)}],y:[{position.y.toFixed(2)}]
               </span>
               <span className="text-rose-600">[{count}]</span>
             </div>
           )}
         </div>
-        <div className="md:w-[54em] flex items-center justify-between py-4 border-2 border-dashed border-gray-300 hover:border-2 bg-white hover:border-blue-600 shadow-lg hover:cursor-move ">
+        <div className="lg:w-[54em] flex items-center justify-between py-4 border-2 border-dashed border-gray-300 hover:border-2 bg-white hover:border-blue-600 shadow-lg hover:cursor-move ">
           <div
             className={` ${
               hide ? "hidden" : ""
@@ -103,18 +106,16 @@ const Experience: React.FC = () => {
                   {"();"}
                 </span>
               </div>
-              <ScrollArea className=" w-full border border-gray-200 rounded-md bg-slate-100 mt-3">
-                <div className="w-full font-medium">
-                  <SyntaxHighlighter
-                    language="json"
-                    style={stackoverflowLight}
-                    wrapLongLines
-                    className="w-full overflow-auto max-h-48 md:max-h-72 lg:max-h-max"
-                  >
-                    {code}
-                  </SyntaxHighlighter>
-                </div>
-              </ScrollArea>
+              <div className="w-full font-medium">
+                <SyntaxHighlighter
+                  language="json"
+                  style={stackoverflowLight}
+                  wrapLongLines
+                  className="w-full overflow-y-auto max-h-80 md:max-h-72 "
+                >
+                  {code}
+                </SyntaxHighlighter>
+              </div>
               <div className="my-4">
                 <span className=" font-bold font-mono">
                   <span className="text-purple-600">const</span>
@@ -128,18 +129,16 @@ const Experience: React.FC = () => {
                   {"();"}
                 </span>
               </div>
-              <ScrollArea className=" border border-gray-200 rounded-md bg-slate-100 mt-3">
-                <div className="my-6 font-medium">
-                  <SyntaxHighlighter
-                    language="json"
-                    style={stackoverflowLight}
-                    wrapLongLines
-                    className="overflow-auto max-h-48 md:max-h-72 lg:max-h-max"
-                  >
-                    {code2}
-                  </SyntaxHighlighter>
-                </div>
-              </ScrollArea>
+              <div className="my-6 font-medium">
+                <SyntaxHighlighter
+                  language="json"
+                  style={stackoverflowLight}
+                  wrapLongLines
+                  className="overflow-y-auto  md:max-h-72 "
+                >
+                  {code2}
+                </SyntaxHighlighter>
+              </div>
             </span>
           </div>
         </div>
