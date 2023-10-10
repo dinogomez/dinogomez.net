@@ -77,7 +77,7 @@ const Experience: React.FC = () => {
             </div>
           )}
         </div>
-        <div className="lg:w-[30em] xl:w-[40em] 2xl:w-[49em] flex items-center justify-between py-4 border-2 border-dashed border-gray-300 hover:border-2 bg-white hover:border-blue-600 shadow-lg hover:cursor-move ">
+        <div className="lg:w-[30em] xl:w-[40em] 2xl:w-[50em] flex items-center justify-between py-4 border-2 border-dashed border-gray-300 hover:border-2 bg-white hover:border-blue-600 shadow-lg hover:cursor-move ">
           <div
             className={` ${
               hide ? "hidden" : ""
