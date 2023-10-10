@@ -208,7 +208,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col xl:flex-row space-x-4 ">
+        <div className="flex flex-col xl:flex-row xl:space-x-4 ">
           <div className="w-full flex flex-col space-y-4">
             <Name />
             <Projects />
