@@ -55,7 +55,7 @@ export const CardGrid = ({ className }: { className?: string }) => {
                   type: "spring",
                   duration: 0.5,
                   ease: "easeInOut",
-                  delay: idx * 0.1, // Add a delay to each link
+                  delay: idx * 0.1,
                 }}
                 className="rounded-md gap-1 text-sm h-full w-full p-4 overflow-hidden shadow-lg bg-background  border border-transparent dark:border-white/[0.2]  relative z-20 flex flex-col flex-wrap"
               >

@@ -62,7 +62,7 @@ function Experience() {
               type: "spring",
               duration: 0.5,
               ease: "easeInOut",
-              delay: index * 0.1, // Add a delay to each experience
+              delay: index * 0.1,
             }}
           >
             <div className="flex gap-4">
