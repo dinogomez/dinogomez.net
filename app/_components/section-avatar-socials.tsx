@@ -51,10 +51,10 @@ function AvatarSocials() {
             </span>
           </span>
         </div>
-        <div className="md:hidden">
+        <div className="sm:hidden">
           <Settings />
         </div>
-        <div className="hidden md:flex items-center justify-center gap-2">
+        <div className="hidden sm:flex items-center justify-center gap-2">
           {Config.Links.map((link, index) => (
             <div>
               <motion.div

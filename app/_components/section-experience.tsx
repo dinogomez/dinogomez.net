@@ -81,7 +81,7 @@ function Experience() {
                 <h4 className="leading-4 text-sm">
                   {exp.role}{" "}
                   {exp.setup === "Remote" && (
-                    <span className="border bg-blue-500 text-white border-transparent dark:bg-transparent dark:border-green-500 dark:text-green-500 text-xs p-[0.10rem] px-1">
+                    <span className="border bg-primary text-white border-transparent dark:bg-transparent dark:border-green-500 dark:text-green-500 text-xs p-[0.10rem] px-1">
                       REMOTE
                     </span>
                   )}

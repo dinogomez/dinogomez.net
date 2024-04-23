@@ -10,6 +10,7 @@ import About from "./_components/section-about";
 import AvatarSocials from "./_components/section-avatar-socials";
 import Skills from "./_components/section-skills";
 import BreadCrumb from "./_components/section-breadcrumb";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Paul Gomez",
@@ -32,8 +33,11 @@ export default function RootLayout({
           className={`${GeistSans.variable} ${GeistMono.variable} w-screen overflow-x-hidden  min-h-screen bg-background dark:bg-background font-sans antialiased`}
         >
           <Provider>
-            <div className="container md:max-w-2xl mx-auto max-w-none antialiased mb-10">
-              <div className="md:p-1 p-8 pt-4 md:pt-0 space-y-5">
+            <div
+              className="container md:max-w-[50rem]
+ w-full mx-auto max-w-none antialiased mb-10"
+            >
+              <div className="md:p-0 p-8 pt-4 md:pt-0 space-y-5">
                 <div className="text-center dark:text-muted-foreground text-primary p-5  py-20">
                   <TextHeader />
                 </div>
