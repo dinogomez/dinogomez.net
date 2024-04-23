@@ -33,7 +33,7 @@ function AvatarSocials() {
           initial={{ scale: 0.5, y: 0 }}
           whileHover={{ scale: 0.6, y: -5 }}
           transition={{ duration: 0.2 }}
-          className={`absolute right-[-8.4em] top-[-1.4em] -translate-y-[-2.6em]`}
+          className={`absolute right-[-5.5em] top-[0.3em]  sm:top-[2.3em] -translate-y-[-2.9em]`}
           src="sticky-note.webp"
           alt="Sticky Note Light"
         />
