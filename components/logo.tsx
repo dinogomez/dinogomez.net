@@ -7,7 +7,7 @@ function Logo() {
   return (
     <motion.div
       initial={{ scale: 1 }}
-      whileHover={{ scale: 1.17 }}
+      whileHover={{ scale: 1.1 }}
       transition={{
         damping: 17,
       }}
@@ -18,7 +18,7 @@ function Logo() {
         width="0"
         height="0"
         sizes="100vw"
-        className="rounded-full h-12 sm:h-16 w-12 sm:w-16 mx-auto"
+        className="hover:animate-spin rounded-full h-12 sm:h-16 w-12 sm:w-16 mx-auto"
       />
     </motion.div>
   );
