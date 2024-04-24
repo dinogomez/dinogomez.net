@@ -30,12 +30,13 @@ function AvatarSocials() {
         href={`mailto:dinogomez.dev@gmail.com?subject=Job%20Opportunity%20or%20Project%20Collaboration&body=Dear%20Dino,%0D%0A`}
       >
         <motion.img
-          initial={{ scale: 0.5, y: 0 }}
-          whileHover={{ scale: 0.6, y: -5 }}
+          initial={{ scale: 0.6, y: 0 }}
+          whileHover={{ scale: 0.8, y: -5 }}
           transition={{ duration: 0.2 }}
-          className={`absolute right-[-5.5em] top-[0.3em]  sm:top-[2.3em] -translate-y-[-2.9em]`}
-          src="sticky-note.webp"
+          className={`antialiased absolute right-[-5.5em] top-[0.3em]  sm:top-[2.3em] -translate-y-[-2.9em]`}
+          src="sticky-note.png"
           alt="Sticky Note Light"
+          style={{ imageRendering: "crisp-edges" }}
         />
       </Link>
 

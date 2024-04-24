@@ -51,7 +51,7 @@ const Loading = () => (
 function Experience() {
   return (
     <Suspense fallback={<Loading />}>
-      <section className="flex flex-col gap-4 text-primary pt-3">
+      <section id="list" className="flex flex-col gap-4 text-primary pt-3">
         {" "}
         {Config.Experience.map((exp, index) => (
           <motion.div

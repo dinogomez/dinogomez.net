@@ -32,7 +32,7 @@ function BreadCrumb() {
             {pathname === "/" ? (
               <BreadcrumbPage>Experience</BreadcrumbPage>
             ) : (
-              <BreadcrumbLink href="/">Experience</BreadcrumbLink>
+              <BreadcrumbLink href="/#list">Experience</BreadcrumbLink>
             )}
           </BreadcrumbItem>
           <BreadcrumbSeparator />
@@ -42,7 +42,7 @@ function BreadCrumb() {
                 <BreadcrumbPage>Projects</BreadcrumbPage>
               </div>
             ) : (
-              <BreadcrumbLink href="/projects">
+              <BreadcrumbLink href="/projects#list">
                 <div className="flex items-center">Projects</div>
               </BreadcrumbLink>
             )}
