@@ -38,7 +38,7 @@ export default function RootLayout({
  w-full mx-auto max-w-none antialiased mb-10"
             >
               <div className="md:p-0 p-8 pt-4 md:pt-0 space-y-5">
-                <div className="text-center dark:text-muted-foreground text-primary p-5  py-20">
+                <div className="text-center text-muted-foreground p-5  py-20">
                   <TextHeader />
                 </div>
                 <div className="flex flex-col gap-4">

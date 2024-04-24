@@ -60,7 +60,7 @@ function AvatarSocials() {
             <div>
               <motion.div
                 key={`links${index}`}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.19 }}
                 transition={{ duration: 0.2 }}
               >
                 <Link key={index} href={Object.values(link)[0]} target="_blank">
@@ -68,7 +68,8 @@ function AvatarSocials() {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <Button
-                          variant={theme === "light" ? "default" : "outline"}
+                          className="shadow-md"
+                          variant={"outline"}
                           size="icon"
                         >
                           {React.createElement(Object.values(link)[1], {
