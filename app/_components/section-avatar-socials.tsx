@@ -57,9 +57,8 @@ function AvatarSocials() {
         </div>
         <div className="hidden sm:flex items-center justify-center gap-2">
           {Config.Links.map((link, index) => (
-            <div>
+            <div key={`links${index}`}>
               <motion.div
-                key={`links${index}`}
                 whileHover={{ scale: 1.19 }}
                 transition={{ duration: 0.2 }}
               >
