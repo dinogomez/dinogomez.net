@@ -9,7 +9,7 @@ const Provider: React.FC<ProviderProps> = async ({ children }) => {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="light"
       enableSystem
       disableTransitionOnChange
     >

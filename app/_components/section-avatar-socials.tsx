@@ -44,7 +44,7 @@ function AvatarSocials() {
         <div className="inline-flex items-center">
           <Logo />
           <span className="flex-grow flex flex-col pl-4 gap-1">
-            <span className="text-sm md:text-md font-extrabold">
+            <span className="text-sm md:text-md font-semibold">
               {Config.Name}
             </span>
             <span className="text-muted-foreground text-xs ">
