@@ -8,6 +8,8 @@ import { LayoutGridIcon } from "lucide-react";
 export const Config = {
   Name: "Paul Gomez",
   Role: "Full Stack Engineer",
+  yearStart: 2021,
+  openForWork: false,
   Links: [
     {
       Mail: "mailto:dinogomez.dev@gmail.com",

@@ -1,3 +1,5 @@
+import { Config } from "@/lib/data";
+import { getYearsOfExperience } from "@/lib/utils";
 import React from "react";
 
 function About() {
@@ -19,7 +21,7 @@ function About() {
           Philippines
         </span>
         , working remotely in projects involving TypeScript, Next.js, React, C#,
-        and Python. With over 3 years of experience, I've worked closely with
+        and Python. With over {getYearsOfExperience(Config.yearStart)} years of experience, I've worked closely with
         companies locally and remotely with different teams worldwide.
       </p>
     </section>
