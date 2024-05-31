@@ -20,13 +20,14 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Image from "next/image";
 
 function AvatarSocials() {
   const { theme } = useTheme();
 
   return (
     <div className="relative">
-      <Link
+      {Config.openForWork ? ( <Link
         href={`mailto:dinogomez.dev@gmail.com?subject=Job%20Opportunity%20or%20Project%20Collaboration&body=Dear%20Dino,%0D%0A`}
       >
         <motion.img
@@ -35,10 +36,11 @@ function AvatarSocials() {
           transition={{ duration: 0.2 }}
           className={`antialiased absolute right-[-5.5em] top-[0.3em]  sm:top-[2.3em] -translate-y-[-2.9em]`}
           src="sticky-note.png"
-          alt="Sticky Note Light"
+          alt="Sticky Note Open For Work"  
           style={{ imageRendering: "crisp-edges" }}
         />
-      </Link>
+      </Link>) : <Image width={100} height={100}  className="antialiased absolute right-[-3.5em]   sm:top-[2.3em] -translate-y-[-2em]" src="/sticky-note-closed.png" alt="Sticky Note Closed For Work"/>}
+     
 
       <section className="flex justify-between items-center border rounded-md space-x-3  p-2 sm:p-4 mb-4 ">
         <div className="inline-flex items-center">
