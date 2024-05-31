@@ -7,43 +7,25 @@ import { Spotlight } from "@/components/ui/spotlight";
 
 const variants = {
   initial: {
-    opacity: 0.5,
-    scale: 0.5,
-    transition: {
-      type: "spring",
-      duration: 0.5,
-      ease: "easeInOut",
-    },
+    scale: 0,
+    opacity: 0,
   },
   animate: {
-    scale: 1,
+    scale: 1.05, 
     opacity: 1,
     transition: {
-      type: "spring",
-      duration: 0.5,
-      ease: [0, 0.71, 0.2, 1.01],
-      scale: {
-        type: "spring",
-        damping: 10,
-        stiffness: 50,
-        restDelta: 0.001,
-      },
+      type: "tween",
+      duration: 0.5, 
+      ease: "circOut", 
     },
   },
   exit: {
-    scale: 0.5,
+    scale: 0,
     opacity: 0,
     transition: {
-      type: "spring",
-      duration: 0.5,
-      ease: "easeInOut",
-      delay: 0.1,
-      // Add a slower decay to make the exit transition smoother
-      decay: {
-        type: "spring",
-        stiffness: 50,
-        damping: 10,
-      },
+      type: "tween",
+      duration: 0.5, 
+      ease: "circIn", 
     },
   },
 };
@@ -77,17 +59,15 @@ const TextHeader = () => {
     <AnimatePresence>
       <div className="h-[3rem]">
         {isVisible && (
-          <motion.div
+          <motion.h1
             key={textIndex}
             variants={variants}
             initial="initial"
             animate="animate"
             exit="exit"
-          >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold">
+            className="text-5xl sm:text-6xl md:text-7xl font-bold"          >
               {textArray[textIndex]}
-            </h1>
-          </motion.div>
+          </motion.h1>
         )}
       </div>
     </AnimatePresence>
