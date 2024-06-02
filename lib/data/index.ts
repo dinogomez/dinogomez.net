@@ -53,7 +53,7 @@ export const Config = {
       yearX: "2022",
       yearY: "Now",
       setup: "Remote",
-      desc: "Developed tools for codebase translation analysis, web-worker automation and a vscode integrated custom syntax highlighter for xml cdata tags available on <a className='underline' href='https://marketplace.visualstudio.com/publishers/PaulGomez' target='_blank' rel='noopener noreferrer'>Visual Studio Marketplace</a>.",
+      desc: "Developed tools for codebase translation analysis, web-worker automation, database mapping, encryption and a vscode integrated custom syntax highlighter for xml cdata tags available on <a className='underline' href='https://marketplace.visualstudio.com/publishers/PaulGomez' target='_blank' rel='noopener noreferrer'>Visual Studio Marketplace</a>.",
     },
     {
       name: "Noovid",
