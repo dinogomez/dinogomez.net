@@ -75,7 +75,7 @@ export const Config = {
   ],
   Projects: [
     {
-      name: "paulgomez.vercel.app",
+      name: "paulgomez.app",
       user: "dinogomez",
       repo: "dinogomez.net",
       url: "https://github.com/dinogomez/dinogomez.net",
@@ -88,7 +88,7 @@ export const Config = {
       live: true,
     },
     {
-      name: "dinogomez.vercel.app",
+      name: "dinogomez.app",
       user: "dinogomez",
       repo: "dinogomez.net",
       url: "https://dinogomez.vercel.app/",
