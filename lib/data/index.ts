@@ -123,7 +123,7 @@ export const Config = {
       stars: 0,
       dl: "",
       wip: false,
-      ppt: false,
+      ppt: true,
     },
     {
       name: "CDATA-SH",
